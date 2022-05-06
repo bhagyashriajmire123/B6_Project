@@ -1,0 +1,85 @@
+<!-- <!-
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+</body>
+</html> -->
+<!-- 
+<html>
+<head>
+    <title> page Title </title>
+</head>
+<body>
+    <h1> Wellcome Python </h1>
+    <p> Start Coding </p>
+</body>
+</html> 
+
+  -->
+
+<!-- 
+<html>
+    <head>
+        <title> Title Page </title>
+    </head>>
+    <body>
+        <h1> Wellcome to Web Page </h1>
+        <p> I am software Devloper </p>
+        <a href="https://www.w3schools.com">This is a link</a>
+        <p style=" color :greenyellow (43,255,0);"> This is color pyara</p>
+        <img src="media//img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
+          <div role="img" class="col-sm-10 p-0">
+              
+                </div>
+    </body>
+    
+    <form action="/homepage/" method="post">   # kis url pe redirect karna hai issliye action vala use karte 
+    < form action ={% url 'homepage'%} method ="POST"> # url define kiya bcz tm rl folder me agar home page k andar koi change kro to bhi farak nahi padga dynamical kiya
+        </html>  -->
+
+
+
+<html>
+    
+    <head>
+        <title> Welcome to Django Project </title>
+
+        </head>
+
+        <body>
+            <h1> Book Form </h1>
+            <hr>
+                <form action="{% url 'homepage'%}" method="post">   
+                    {% csrf_token %}
+                    <!-- {% if Single_data %} 
+                          Book Id :- <input type="number" name="bid" type="{{Single_data.id}}"> <br><br>                                           
+                    {% endif %} -->
+                    Book Name :- <input type="text" name="bname" type="{{Single_data.Name}}" placeholder="Enter Book Name"> <br><br>
+                    Book Price :- <input type="number" name="bprice" type="{{Single_data.price}}" placeholder="Enter Book price"> <br><br>
+                    Book Qynt :- <input type="number" name="bqynt" type="{{Single_data.qynt}}" placeholder="Enter Book qynt"> <br><br>
+                <input type="Submit" value="Submit">
+                
+
+                </form>
+                <br>
+
+            <a href="{% url 'show_all_book' %}"> Show Books </a>
+
+        </body>
+
+</html>
+
+
+
+
+
+
+
+
+

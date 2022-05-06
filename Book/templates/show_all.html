@@ -1,0 +1,47 @@
+<html>
+<head>
+<title> Welcome To Django </title>
+</head>
+<body> 
+    <h2> All Book </h2>
+    <hr>
+
+
+    <!-- {%for i in book%}
+    {{forloop.counter}}
+    {{i.Name}} --- {{i.price}} ---{{i.quty}} <br>
+    {% endfor %} -->
+<table border="1" style="width: 50%">
+    <tr>
+        <th>Book Id</th>
+        <th>Book Name</th>
+        <th>Book Price</th>
+        <th>Book qynt</th>
+        <th> Action </th>
+
+    </tr>
+
+    {%for book in books%}
+   
+    <tr>
+     <td>{{book.id}}</td>
+     <td>{{book.Name}}</td>  
+     <td>{{book.price}}</td>  
+     <td>{{book.qynt}}</td>
+   
+    <td> <a href= "{% url 'Edit_Data' book.id %}"> Edit  </a> &nbsp; &nbsp;
+        <a href="{%url 'delete' book.id %}"> Delete </a>
+        
+        </td>
+    
+   
+    </tr>
+    {% endfor %}
+</table>
+<br>
+
+<a href="{% url 'homepage' %}"> Home</a>
+</body>
+
+
+</html>
